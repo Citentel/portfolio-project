@@ -20,7 +20,7 @@ class Footer extends Component {
                         </div>
                     </div>
                     <div className="footer__box--text">
-                        <p>&copy; {this.state.currentDate} | gontarsky.pl | All rights reserved</p>
+                        <p className="footer__box--text__paragraf">&copy; {this.state.currentDate} | gontarsky.pl | All rights reserved</p>
                     </div>
                 </div>
             </footer>
