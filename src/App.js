@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import Routing from "./Routing/index";
+import Routing from "./Routing";
+import Footer from "./components/Footer";
 import "./static/css/App.css";
 
 class App extends Component {
@@ -7,6 +8,7 @@ class App extends Component {
     return (
       <div>
         <Routing />
+        <Footer />
       </div>
     );
   };

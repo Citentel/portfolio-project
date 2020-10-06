@@ -1,0 +1,49 @@
+@import '../../../../static/css/config.less';
+
+.footer {
+    width: 100%;
+    padding: 40px 0px;
+    margin: 50px 0px 0px;
+    display: flex;
+    justify-content: center;
+    background-color: @color__primary--light;
+    .footer__box {
+        max-width: 800px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px;
+        .footer__box--links {
+            display: flex;
+            .footer__box--links__link {
+                margin: 0px 10px;
+                a {
+                    color: @color__white;
+                    font-weight: 600;
+                    font-size: @base__font-size * 1.2;
+                    line-height: @base__font-size * 1.7;
+                    text-decoration: none;
+                    transition: all 0.3s ease-in-out;
+                    &:hover,
+                    &.active {
+                        color: @color__primary--dark;
+                    }
+                    @media only screen and (max-width: 400px) {
+                        font-size: inherit;
+                        line-height: inherit;
+                    }
+                }
+            }
+        }
+        .footer__box--text {
+            margin: 20px 0 0;
+            p {
+                color: @color__gray;
+                font-size: @base__font-size * 0.8;
+            }
+        }
+    }
+}
+
+
