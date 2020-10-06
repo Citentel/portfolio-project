@@ -19,54 +19,21 @@ class Routing extends Component {
                 <nav className="navbar">
                     <div className="navbar__box">
                         <div className="navbar__box--logo">
-                            <img src={logo} alt="logo"/>
+                            <img src={ logo } alt="logo"/>
                         </div>
                         <div className="navbar__box--links">
                             <div className="navbar__box--links__link">
-                                <Link 
-                                    to={{
-                                        pathname : "/",
-                                        state : {
-                                            header : {
-                                                h1 : "To ja Robert",
-                                                p : "Web deweloper"
-                                            }
-                                        }
-                                    }} 
-                                    onClick={((e) => this.handleClick(e))}
-                                >
+                                <Link className="active" to={{ pathname : "/" }} onClick={((e) => this.handleClick(e))}>
                                     Ja
                                 </Link>
                             </div>
                             <div className="navbar__box--links__link">
-                                <Link 
-                                    to={{
-                                        pathname : "/projekty",
-                                        state : {
-                                            header : {
-                                                h1 : "Moja praca",
-                                                p : "Wybrane projekty"
-                                            }
-                                        }
-                                    }} 
-                                    onClick={((e) => this.handleClick(e))}
-                                >
+                                <Link to={{ pathname : "/projekty" }} onClick={((e) => this.handleClick(e))}>
                                     Projekty
                                 </Link>
                             </div>
                             <div className="navbar__box--links__link">
-                                <Link 
-                                    to={{
-                                        pathname : "/kontakt",
-                                        state : {
-                                            header : {
-                                                h1 : "Kontakt",
-                                                p : "Napisz do mnie"
-                                            }
-                                        }
-                                    }} 
-                                    onClick={((e) => this.handleClick(e))}
-                                >
+                                <Link to={{ pathname : "/kontakt" }} onClick={((e) => this.handleClick(e))}>
                                     Kontakt
                                 </Link>
                             </div>
@@ -74,9 +41,43 @@ class Routing extends Component {
                     </div>
                 </nav>
                 <Switch>
-                    <Route exact path="/" component={Header} />
-                    <Route path="/projekty" component={Header} />
-                    <Route path="/kontakt" component={Header} />
+                    <Route 
+                        exact
+                        path="/" 
+                        render={
+                            () => {
+                                return (
+                                    <div>
+                                        <Header h1="To ja Robert" p="Web deweloper" />
+                                    </div>
+                                );
+                            }
+                        }
+                    />
+                    <Route
+                        path="/projekty"
+                        render = {
+                            () => {
+                                return (
+                                    <div>
+                                        <Header h1="Moja praca" p="Wybrane projekty" />
+                                    </div>
+                                );
+                            }
+                        }
+                    />
+                    <Route
+                        path="/kontakt"
+                        render = {
+                            () => {
+                                return (
+                                    <div>
+                                        <Header h1="Kontakt" p="Napisz do mnie" />
+                                    </div>
+                                );
+                            }
+                        }
+                    />
                 </Switch>
             </BrowserRouter>
         );
