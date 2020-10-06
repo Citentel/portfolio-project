@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import Routing from "./Routing";
 import Footer from "./components/Footer";
+import Contact from "./components/Contact";
 import "./static/css/App.css";
+
 
 class App extends Component {
   constructor(props) {
@@ -13,6 +15,7 @@ class App extends Component {
     return (
       <div>
         <Routing />
+        <Contact />
         <Footer />
       </div>
     );
