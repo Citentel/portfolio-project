@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import Header from "../components/Header";
 import "./static/css/index.css"
 import logo from "./static/img/logo.png";
 
@@ -24,7 +25,13 @@ class Routing extends Component {
                             <div className="navbar__box--links__link">
                                 <Link 
                                     to={{
-                                        pathname : "/",   
+                                        pathname : "/",
+                                        state : {
+                                            header : {
+                                                h1 : "To ja Robert",
+                                                p : "Web deweloper"
+                                            }
+                                        }
                                     }} 
                                     onClick={((e) => this.handleClick(e))}
                                 >
@@ -34,7 +41,13 @@ class Routing extends Component {
                             <div className="navbar__box--links__link">
                                 <Link 
                                     to={{
-                                        pathname : "/projekty"
+                                        pathname : "/projekty",
+                                        state : {
+                                            header : {
+                                                h1 : "Moja praca",
+                                                p : "Wybrane projekty"
+                                            }
+                                        }
                                     }} 
                                     onClick={((e) => this.handleClick(e))}
                                 >
@@ -45,6 +58,12 @@ class Routing extends Component {
                                 <Link 
                                     to={{
                                         pathname : "/kontakt",
+                                        state : {
+                                            header : {
+                                                h1 : "Kontakt",
+                                                p : "Napisz do mnie"
+                                            }
+                                        }
                                     }} 
                                     onClick={((e) => this.handleClick(e))}
                                 >
@@ -55,8 +74,9 @@ class Routing extends Component {
                     </div>
                 </nav>
                 <Switch>
-                    <Route exact path="/" />
-                    <Route path="/projekty" />
+                    <Route exact path="/" component={Header} />
+                    <Route path="/projekty" component={Header} />
+                    <Route path="/kontakt" component={Header} />
                 </Switch>
             </BrowserRouter>
         );
