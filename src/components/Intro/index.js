@@ -5,7 +5,6 @@ import pencil from "./static/img/pencil.png";
 
 class Intro extends Component {
     render = () => {
-        console.log(this.props.image);
         return (
             <div className="intro">
                 <div className="intro__box">
