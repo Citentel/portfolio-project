@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 import About from "../components/About";
+import BreakLine from "../components/BreakLine";
 import Header from "../components/Header";
 import Intro from "../components/Intro";
 import Project1 from "../components/Projects/Project1";
@@ -79,7 +80,9 @@ class Routing extends Component {
                                     <div>
                                         <Header h1={ this.state.basic.header.h1 } p={ this.state.basic.header.p } />
                                         <Intro image={ this.state.basic.intro.image } h3={ this.state.basic.intro.h3 } p={ this.state.basic.intro.p } />
+                                        <BreakLine />
                                         <About />
+                                        <BreakLine />
                                     </div>
                                 );
                             }
