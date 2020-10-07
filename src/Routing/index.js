@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 import About from "../components/About";
 import Header from "../components/Header";
 import Intro from "../components/Intro";
+import Project1 from "../components/Projects/Project1";
 import "./static/css/index.css"
 import logo from "./static/img/logo.png";
 
@@ -97,6 +98,7 @@ class Routing extends Component {
                                     <div>
                                         <Header h1={ this.state.project.header.h1 } p={ this.state.project.header.p } />
                                         <Intro image={ this.state.project.intro.image } h3={ this.state.project.intro.h3 } p={ this.state.project.intro.p } />
+                                        <Project1 />
                                     </div>
                                 );
                             }
