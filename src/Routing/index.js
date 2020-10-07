@@ -102,18 +102,21 @@ class Routing extends Component {
                             }
                         }
                     />
-                    {/* <Route
-                        path="/kontakt"
-                        render = {
+                    <Route 
+                        render={
                             () => {
                                 return (
                                     <div>
-                                        <Header h1={ this.state.contact.header.h1 } p={ this.state.contact.header.p } />
+                                        <Header h1={ this.state.basic.header.h1 } p={ this.state.basic.header.p } />
+                                        <Intro image={ this.state.basic.intro.image } h3={ this.state.basic.intro.h3 } p={ this.state.basic.intro.p } />
+                                        <BreakLine />
+                                        <About />
+                                        <BreakLine />
                                     </div>
                                 );
                             }
                         }
-                    /> */}
+                    />
                 </Switch>
             </BrowserRouter>
         );
