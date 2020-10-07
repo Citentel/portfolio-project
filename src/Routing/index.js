@@ -66,11 +66,6 @@ class Routing extends Component {
                                     Projekty
                                 </Link>
                             </div>
-                            {/* <div className="navbar__box--links__link">
-                                <Link to={{ pathname : "/kontakt" }} onClick={((e) => this.handleClick(e))}>
-                                    Kontakt
-                                </Link>
-                            </div> */}
                         </div>                        
                     </div>
                 </nav>
