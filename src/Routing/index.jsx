@@ -1,14 +1,12 @@
 import React from "react";
 import { BrowserRouter, Route, Switch, Link, Redirect } from "react-router-dom";
+import logo from './static/img/logo.png'
 import "./static/css/index.css"
-
-const logo = require("./static/img/logo.png");
-
-const About = React.lazy(() => import('../components/About'))
-const BreakLine = React.lazy(() => import('../components/BreakLine'))
-const Header = React.lazy(() => import('../components/Header'))
-const Intro = React.lazy(() => import('../components/Intro'))
-const Project = React.lazy(() => import('../components/Project'))
+import About from '../components/About'
+import BreakLine from '../components/BreakLine'
+import Header from '../components/Header'
+import Intro from '../components/Intro'
+import Project from '../components/Project'
 
 const Routing = () => {
     const content = {
@@ -107,8 +105,7 @@ const Routing = () => {
                         () => (
                             <div>
                                 <Header
-                                    h1={content.basic.header.h1}
-                                    p={content.basic.header.p}
+                                    type='basic'
                                 />
                                 <Intro
                                     image={content.basic.intro.image}
@@ -129,8 +126,7 @@ const Routing = () => {
                         () => (
                             <div>
                                 <Header
-                                    h1={content.project.header.h1}
-                                    p={content.project.header.p}
+                                    type='project'
                                 />
                                 <Intro 
                                     image={content.project.intro.image}
@@ -163,8 +159,7 @@ const Routing = () => {
                         () => (
                             <div>
                                 <Header 
-                                    h1={content.notFound.header.h1}
-                                    p={content.notFound.header.p}
+                                    type='notFound'
                                 />
                                 <Intro 
                                     image={content.notFound.intro.image} 

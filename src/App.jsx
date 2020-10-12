@@ -1,9 +1,8 @@
 import React from 'react';
 import './static/css/App.css'
-
-const Routing = React.lazy(() => import('./Routing'))
-const Footer = React.lazy(() => import('./components/Footer'))
-const Contact = React.lazy(() => import('./components/Contact'))
+import Routing from './Routing'
+import Footer from './components/Footer'
+import Contact from './components/Contact'
 
 const blockEvent = () => {
     document.addEventListener('contextmenu', ((event) => event.preventDefault()))
