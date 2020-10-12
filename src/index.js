@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Loader from './components/Loader'
+
+const App = React.lazy(() => import('./App'))
 
 ReactDOM.render(
-    <App />, 
+    <Suspense fallback={<Loader />}>
+        <App />
+    </Suspense>
+    ,
     document.querySelector('#root')
 );

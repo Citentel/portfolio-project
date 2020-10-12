@@ -1,14 +1,10 @@
-import React, { Component } from "react";
-import "./static/css/index.css";
+import React from 'react'
+import './static/css/index.css'
 
-class BreakLine extends Component {
-    render = () => {
-        return (
-            <div className="breakLine">
-                <div className="breakLine__box"></div>
-            </div>
-        );
-    }
-}
+const BreakLine = () => (
+    <div className='breakLine'>
+        <div className='breakLine__box'></div>
+    </div>
+)
 
-export default BreakLine;
+export default BreakLine

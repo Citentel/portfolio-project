@@ -1,25 +1,23 @@
-import React, { Component } from "react";
-import Routing from "./Routing";
-import Footer from "./components/Footer";
-import Contact from "./components/Contact";
-import "./static/css/App.css";
+import React from 'react';
+import './static/css/App.css'
 
+const Routing = React.lazy(() => import('./Routing'))
+const Footer = React.lazy(() => import('./components/Footer'))
+const Contact = React.lazy(() => import('./components/Contact'))
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    document.addEventListener('contextmenu', ((event) => event.preventDefault()));
-  }
-
-  render = () => {
-    return (
-      <div>
-        <Routing />
-        <Contact />
-        <Footer />
-      </div>
-    );
-  };
+const blockEvent = () => {
+    document.addEventListener('contextmenu', ((event) => event.preventDefault()))
 }
 
-export default App;
+const App = () => {
+    blockEvent()
+    return(
+        <>
+            <Routing />
+            <Contact />
+            <Footer />
+        </>
+    )
+}
+
+export default App
