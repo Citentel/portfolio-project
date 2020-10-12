@@ -4,7 +4,7 @@ import About from "../components/About";
 import BreakLine from "../components/BreakLine";
 import Header from "../components/Header";
 import Intro from "../components/Intro";
-import Project1 from "../components/Projects/Project1";
+import Project from "../components/Project";
 import "./static/css/index.css"
 import logo from "./static/img/logo.png";
 
@@ -30,6 +30,18 @@ class Routing extends Component {
                 image : "project",
                 h3 : "Co zrobiłem",
                 p : "Poniżej znajdziesz moje ostatnie projekty jakie realizowałem. Chcesz zobaczyć mój kod? Zapraszam cię na mojego GitHub - a"
+            },
+            project1 : {
+                h3 : "Strona promocyjna kandydatki",
+                p : "Projekt na stworzenie strony dla kandydatki na sejm RP. Strona jest obsługiowana przez autorskie rozwiązanie MVC udostępnione na github."
+            },
+            project2 : {
+                h3 : "Repozytorium GitHub",
+                p : "Platforma na której znajdziesz moje projekty. Takie jak to portfolio."
+            },
+            project3 : {
+                h3 : "Projekt przelicznika walut",
+                p : "Zrealizowany dzięki pobieraniu danych od api NBP. Pliki znajdziesz na github."
             }
         },
         notFound : {
@@ -122,7 +134,21 @@ class Routing extends Component {
                                             h3={ this.state.project.intro.h3 }
                                             p={ this.state.project.intro.p }
                                         />
-                                        <Project1 />
+                                        <Project
+                                            h3={ this.state.project.project2.h3 }
+                                            p={ this.state.project.project2.p }
+                                            pType="github"
+                                        />
+                                        <Project
+                                            h3={ this.state.project.project3.h3 }
+                                            p={ this.state.project.project3.p }
+                                            pType="kantor"
+                                        />
+                                        <Project
+                                            h3={ this.state.project.project1.h3 }
+                                            p={ this.state.project.project1.p }
+                                            pType="project1"
+                                        />
                                     </div>
                                 );
                             }
