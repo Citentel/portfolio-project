@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Link, Redirect } from "react-router-dom";
 import About from "../components/About";
 import BreakLine from "../components/BreakLine";
 import Header from "../components/Header";
@@ -32,12 +32,18 @@ class Routing extends Component {
                 p : "Poniżej znajdziesz moje ostatnie projekty jakie realizowałem. Chcesz zobaczyć mój kod? Zapraszam cię na mojego GitHub - a"
             }
         },
-        contact : {
+        notFound : {
             header : {
-                h1 : "Kontakt",
-                p : "Napisz do mnie"
+                h1 : "404",
+                p : "Coś poszło nie tak..."
+            },
+            intro : {
+                image : "basic",
+                h3 : "Cześć",
+                p : "Jesteś tutaj, więc możesz wrócić do strony startowej. Kliknij przycisk poniżej który przeniesie cię na stronę główną.",
+                btn: "Strona startowa"
             }
-        }
+        },
     }
 
     handleClick = (e) => {
@@ -58,12 +64,17 @@ class Routing extends Component {
                         </div>
                         <div className="navbar__box--links">
                             <div className="navbar__box--links__link">
-                                <Link className="active" to={{ pathname : "/" }} onClick={((e) => this.handleClick(e))}>
+                                <Link 
+                                    className="active"
+                                    to={{ pathname : "/" }}
+                                    onClick={((e) => this.handleClick(e))}>
                                     Ja
                                 </Link>
                             </div>
                             <div className="navbar__box--links__link">
-                                <Link to={{ pathname : "/projekty" }} onClick={((e) => this.handleClick(e))}>
+                                <Link
+                                    to={{ pathname : "/projekty" }}
+                                    onClick={((e) => this.handleClick(e))}>
                                     Projekty
                                 </Link>
                             </div>
@@ -72,14 +83,21 @@ class Routing extends Component {
                 </nav>
                 <Switch>
                     <Route 
-                        exact
+                        exact={ true }
                         path="/" 
                         render={
                             () => {
                                 return (
                                     <div>
-                                        <Header h1={ this.state.basic.header.h1 } p={ this.state.basic.header.p } />
-                                        <Intro image={ this.state.basic.intro.image } h3={ this.state.basic.intro.h3 } p={ this.state.basic.intro.p } />
+                                        <Header
+                                            h1={ this.state.basic.header.h1 }
+                                            p={ this.state.basic.header.p }
+                                        />
+                                        <Intro
+                                            image={ this.state.basic.intro.image }
+                                            h3={ this.state.basic.intro.h3 } 
+                                            p={ this.state.basic.intro.p }
+                                        />
                                         <BreakLine />
                                         <About />
                                         <BreakLine />
@@ -89,13 +107,21 @@ class Routing extends Component {
                         }
                     />
                     <Route
+                        exact={ true }
                         path="/projekty"
                         render = {
                             () => {
                                 return (
                                     <div>
-                                        <Header h1={ this.state.project.header.h1 } p={ this.state.project.header.p } />
-                                        <Intro image={ this.state.project.intro.image } h3={ this.state.project.intro.h3 } p={ this.state.project.intro.p } />
+                                        <Header
+                                            h1={ this.state.project.header.h1 }
+                                            p={ this.state.project.header.p }
+                                        />
+                                        <Intro 
+                                            image={ this.state.project.intro.image }
+                                            h3={ this.state.project.intro.h3 }
+                                            p={ this.state.project.intro.p }
+                                        />
                                         <Project1 />
                                     </div>
                                 );
@@ -103,19 +129,31 @@ class Routing extends Component {
                         }
                     />
                     <Route 
+                        exact={ true }
+                        path="/404"
                         render={
                             () => {
                                 return (
                                     <div>
-                                        <Header h1={ this.state.basic.header.h1 } p={ this.state.basic.header.p } />
-                                        <Intro image={ this.state.basic.intro.image } h3={ this.state.basic.intro.h3 } p={ this.state.basic.intro.p } />
-                                        <BreakLine />
-                                        <About />
+                                        <Header 
+                                            h1={ this.state.notFound.header.h1 }
+                                            p={ this.state.notFound.header.p }
+                                        />
+                                        <Intro 
+                                            image={ this.state.notFound.intro.image } 
+                                            h3={ this.state.notFound.intro.h3 } 
+                                            p={ this.state.notFound.intro.p } 
+                                            btn={ this.state.notFound.intro.btn }
+                                        />
                                         <BreakLine />
                                     </div>
                                 );
                             }
                         }
+                    />
+                    <Redirect 
+                        from="*"
+                        to="/404"
                     />
                 </Switch>
             </BrowserRouter>
