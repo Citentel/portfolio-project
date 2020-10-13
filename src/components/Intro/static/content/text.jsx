@@ -12,6 +12,6 @@ export default {
     notFound : {
         image : 'basic',
         h3 : 'Cześć',
-        p : 'Jesteś tutaj, więc możesz wrócić do strony startowej. Kliknij przycisk poniżej który przeniesie cię na stronę główną.'
+        p : 'Niestety ale tutaj nic nie znajdziesz. Możesz zawsze wrócić'
     }
 }
