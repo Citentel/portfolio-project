@@ -1,46 +1,39 @@
 import React from 'react'
 import './static/css/index.css'
+import project1 from './static/img/project1.png'
+import project2 from './static/img/project2.png'
+import project3 from './static/img/project3.png'
 
 const Project = (props) => {
-    const variants = {
-        project1 : {
-            css : {
-                background : 'linear-gradient(90deg,#4e2b8a,#ac145a,#d6001c)'
-            },
-            link : 'http://tarczynska.gontarsky.pl/'
-        },
-        github : {
-            css : {
-                background : 'linear-gradient(90deg,#212121,#616161,#9E9E9E)'
-            },
-            link : 'https://github.com/Citentel/'
-        },
-        kantor : {
-            css : {
-                background : 'linear-gradient(90deg,#1A237E,#3949AB,#7986CB)'
-            },
-            link : 'http://kantor.gontarsky.pl/'
-        }
-    }
+    const content = require('./static/content/text').default[props.type]
 
-    return (
+    return(
         <div 
             className='project' 
-            style={variants[props.pType].css}
+            style={content.css}
         >
             <div className='project__box'>
                 <div className='project__box--img'>
                     <img
-                        src={ require('./static/img/'+ props.pType +'.png') }
+                        src={
+                            (() => {
+                                switch (props.type) {
+                                    case 'project1': return project1
+                                    case 'project2': return project2
+                                    case 'project3': return project3
+                                    default: return null
+                                }
+                            })()
+                        }
                         alt='project 1 screen website'
                         className='project__box--img__img'
                     />
                 </div>
                 <div className='project__box--text'>
-                    <h3 className='project__box--text__h3'>{props.h3}</h3>
-                    <p className='project__box--text__p'>{props.p}</p>
+                    <h3 className='project__box--text__h3'>{content.h3}</h3>
+                    <p className='project__box--text__p'>{content.p}</p>
                     <a 
-                        href={variants[props.pType].link}
+                        href={content.link}
                         target='_blank'
                         rel='noopener noreferrer'
                         className='project__box--text__a'
