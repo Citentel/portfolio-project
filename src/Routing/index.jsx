@@ -74,7 +74,7 @@ const Routing = () => {
                                 <Intro type='project' />
                                 <Project type='project1' />
                                 <Project type='project2' />
-                                <Project type='project3' />
+                                {/* <Project type='project3' /> */}
                             </div>
                         )
                     }

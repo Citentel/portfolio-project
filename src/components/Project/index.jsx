@@ -20,7 +20,7 @@ const Project = (props) => {
                                 switch (props.type) {
                                     case 'project1': return project1
                                     case 'project2': return project2
-                                    case 'project3': return project3
+                                    // case 'project3': return project3
                                     default: return null
                                 }
                             })()
